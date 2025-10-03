@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Salon Experience</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <link rel="stylesheet" href="./styles.css">
+    <script>
+        // Custom color for Tailwind
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'accent': '#c79a87',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-white text-neutral-800">
+    <div id="loading-screen">
+        <video id="loading-video" autoplay muted loop playsinline>
+            <source src="img/3997198-uhd_4096_2160_25fps.mp4" type="video/mp4">
+        </video>
+        <div class="loading-controls">
+            <button class="loading-btn" id="unmute-btn">
+                <i class="fas fa-volume-mute"></i> Unmute
+            </button>
+            <button class="loading-btn" id="skip-btn">Skip</button>
+        </div>
+    </div>
+
+    <div class="scroll-progress bg-accent" id="scroll-progress"></div>
+
+    <nav id="navbar">
+        <div class="nav-content">
+            <div class="logo">Ocean</div>
+            <div class="nav-links">
+                <a href="#home" class="hover:text-accent transition-colors">Home</a>
+                <a href="#about" class="hover:text-accent transition-colors">About</a>
+                <a href="#services" class="hover:text-accent transition-colors">Services</a>
+                <a href="#portfolio" class="hover:text-accent transition-colors">Portfolio</a>
+                <a href="#experiences" class="hover:text-accent transition-colors">Experiences</a>
+                <a href="#shop" class="hover:text-accent transition-colors">Shop</a>
+                <a href="#news" class="hover:text-accent transition-colors">News</a>
+                <a href="#contact" class="hover:text-accent transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <h1 class="text-center">Ocean Ease</h1>
+            <div class="hero-subtitle">Ultimate Skincare Experience</div>
+        </div>
+        <div class="scroll-indicator">
+            <span>SCROLL</span>
+            <div class="scroll-line"></div>
+            <span>EXPLORE</span>
+        </div>
+    </section>
+
+    <section id="about-us" class="relative overflow-hidden bg-[#f7f6f4] py-20">
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="h-full w-full grid grid-cols-12">
+                <div class="col-span-3"></div>
+                <div class="col-span-3 bg-accent/20"></div>
+                <div class="col-span-6"></div>
+            </div>
+        </div>
+
+        <div class="relative max-w-[1380px] mx-auto px-6 lg:px-10">
+            <div class="flex flex-col lg:flex-row items-center min-h-[70vh]">
+                <div class="relative z-10 lg:pr-6">
+                    <img src="img/about.jpg" alt="About model" class="block w-full max-w-[770px] shadow-2xl" />
+                </div>
+                <div class="relative z-20 w-full lg:w-auto -mt-16 lg:-ml-24 lg:mt-0">
+                    <div
+                        class="bg-white shadow-2xl px-10 md:px-12 lg:px-14 py-10 md:py-12 lg:py-14 max-w-full lg:max-w-[760px]">
+                        <h2
+                            class="font-serif-raz text-[40px] md:text-[46px] lg:text-[52px] leading-tight text-neutral-900 mb-6">
+                            About Us
+                        </h2>
+                        <p class="text-[16px] leading-8 text-neutral-700">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                            viverra maecenas accumsan lacus vel facilisis.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio-section bg-[#f7f6f4]">
+        <div class="section-header">
+            <h2>Our Work</h2>
+            <p class="section-subtitle">Gallery of Transformations</p>
+        </div>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=500" alt="Portfolio">
+                <div class="portfolio-overlay">
+                    <div class="portfolio-title">Skin Rejuvenation</div>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=500" alt="Portfolio">
+                <div class="portfolio-overlay">
+                    <div class="portfolio-title">Facial Treatment</div>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1519824145371-296894a0daa9?w=500" alt="Portfolio">
+                <div class="portfolio-overlay">
+                    <div class="portfolio-title">Body Therapy</div>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?w=500" alt="Portfolio">
+                <div class="portfolio-overlay">
+                    <div class="portfolio-title">Wellness Journey</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="unique-experience" class="relative py-10 lg:py-12 overflow-hidden bg-white">
+        <div class="max-w-[1280px] mx-auto px-6 lg:px-10">
+            <h2
+                class="font-serif-sp text-[44px] sm:text-[56px] md:text-[68px] leading-[1.05] tracking-wide text-neutral-900 text-center">
+                UNIQUE EXPERIENCE
+            </h2>
+        </div>
+        <div class="max-w-[1440px] mx-auto px-6 lg:px-10 mt-14">
+            <div id="ux-video-wrap" class="relative mx-auto w-full max-w-[1200px] max-h-[500px] aspect-[16/9] overflow-hidden bg-black
+             shadow-2xl opacity-0 translate-y-10 scale-[0.94] will-change-transform will-change-opacity
+             transition-transform duration-[900ms] ease-[cubic-bezier(.2,.8,.2,1)]
+             [transition-property:transform,opacity]">
+                <video id="ux-video" class="absolute inset-0 w-full h-full object-cover"
+                    src="img/3996974-uhd_4096_2160_25fps.mp4" autoplay muted playsinline loop></video>
+                <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experiences" class="experiences-section bg-[#f7f6f4]">
+        <div class="section-header">
+            <p class="section-subtitle">Curated Journeys of Transformation</p>
+        </div>
+        <div class="experiences-grid">
+            <div class="experience-card">
+                <div class="experience-number text-accent">01</div>
+                <h3>The Ultimate Roman Ritual</h3>
+                <p>Pamper yourself as Roman nobility did in ancient times with a 30-minute head-to-toe cleansing
+                    ceremony in the hot hammam.</p>
+                <div class="experience-duration">90 Minutes - $840</div>
+            </div>
+            <div class="experience-card">
+                <div class="experience-number text-accent">02</div>
+                <h3>The Shaman Secret Ritual</h3>
+                <p>Choose a blend of plants from our natural treasure bar for a 30-minute custom-made herbal scrub that
+                    leaves your skin feeling young and fresh.</p>
+                <div class="experience-duration">90 Minutes - $720</div>
+            </div>
+            <div class="experience-card">
+                <div class="experience-number text-accent">03</div>
+                <h3>The Mudness Ritual</h3>
+                <p>First refresh with a delicate body rub to open your pores before our therapist paints your whole body
+                    with a mask from our MUDNESS line.</p>
+                <div class="experience-duration">110 Minutes - $990</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products-section" data-section-index="5" class="py-24 md:py-32 bg-stone-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                <h2 id="products-heading" class="text-4xl md:text-6xl font-heading font-medium mb-24">Our Products</h2>
+            </div>
+            <div class="space-y-24">
+                <div class="grid md:grid-cols-2 gap-16 items-center">
+                    <div class="w-3/4 h-auto mx-auto bg-white rounded-full shadow-lg p-4">
+                        <img src="img/hair.webp" alt="Product bottle"
+                            class="rounded-full">
+                    </div>
+                    <div>
+                        <h3 class="text-3xl md:text-4xl font-heading mb-4">Revitalizing Hair Serum</h3>
+                        <p class="text-stone-600 leading-relaxed mb-6">A botanical infused serum that assists in
+                            nourishing hair, leaving it feeling refreshed and clean.</p>
+                        <a href="#"
+                            class="inline-block border border-stone-800 text-stone-800 px-8 py-3 rounded-full font-semibold hover:bg-stone-800 hover:text-white transition-colors">Buy
+                            Product</a>
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-2 gap-16 items-center">
+                    <div class="md:order-2 w-3/4 h-auto mx-auto bg-white rounded-full shadow-lg p-4">
+                        <img src="img/hair.webp" alt="Product bottle"
+                            class="rounded-full">
+                    </div>
+                    <div class="md:order-1 text-left md:text-right">
+                        <h3 class="text-3xl md:text-4xl font-heading mb-4">Sebu-wash Gel Cleanser</h3>
+                        <p class="text-stone-600 leading-relaxed mb-6">A mattifying foaming face wash formulated to
+                            gently remove excess surface oils and dirt.</p>
+                        <a href="#"
+                            class="inline-block border border-stone-800 text-stone-800 px-8 py-3 rounded-full font-semibold hover:bg-stone-800 hover:text-white transition-colors">Buy
+                            Product</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="relative overflow-hidden bg-white py-20">
+        <div class="max-w-[1280px] mx-auto px-6 lg:px-10">
+            <h2 class="font-serif-sp text-[54px] md:text-[68px] leading-[1.05] text-accent">
+                Our Services
+            </h2>
+        </div>
+
+        <div class="max-w-[1440px] mx-auto mt-12 lg:mt-16">
+            <div class="grid grid-cols-1 lg:grid-cols-2 items-stretch">
+                <div class="relative bg-neutral-800 text-white">
+                    <div class="w-full max-w-[700px] px-8 md:px-12 lg:px-14 py-10 md:py-14 lg:py-16 ml-auto">
+                        <h3
+                            class="font-serif-sp text-[34px] md:text-[42px] lg:text-[46px] leading-tight text-white/95 mb-8">
+                            Skincare Paris Skincare
+                        </h3>
+                        <ul class="space-y-4 text-white/90 text-[16px]">
+                            <li class="flex items-start gap-3"><i
+                                    class="fas fa-phone mt-1.5 text-accent"></i><span>Number:
+                                    0742125487</span></li>
+                            <li class="flex items-start gap-3"><i
+                                    class="fas fa-envelope mt-1.5 text-accent"></i><span>Email:
+                                    info@skincareparis.com</span></li>
+                            <li class="flex items-start gap-3"><i
+                                    class="fas fa-clock mt-1.5 text-accent"></i><span>Working hours: 10:30am –
+                                    9pm</span></li>
+                            <li class="flex items-start gap-3"><i
+                                    class="fas fa-map-marker-alt mt-1.5 text-accent"></i><span>2 Passage
+                                    Communal</span></li>
+                        </ul>
+                        <a href="#"
+                            class="inline-block mt-10 bg-white text-neutral-800 px-8 py-3 text-[16px] font-semibold hover:bg-neutral-200 transition">
+                            View Treatments
+                        </a>
+                    </div>
+                </div>
+                <div class="relative bg-neutral-100">
+                    <div class="relative flex gap-2 sm:gap-3 lg:-mt-16 lg:-ml-24 lg:mb-[-44px]">
+                        <div class="relative flex-1 overflow-hidden shadow-xl">
+                            <img src="img/model2.png" alt="Smile close-up"
+                                class="w-full h-full min-h-[520px] object-cover" />
+                        </div>
+                        <div class="relative flex-1 overflow-hidden bg-accent shadow-xl">
+                            <img src="img/model3.png" alt="Model portrait"
+                                class="w-full h-full min-h-[520px] object-contain p-8 md:p-9 lg:p-10" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--  <section id="news" class="news-section bg-[#f7f6f4]">
+        <div class="section-header">
+            <h2>Latest News</h2>
+            <p class="section-subtitle">Stay Updated with Our Stories</p>
+        </div>
+        <div class="news-grid">
+            <div class="news-card">
+                <div class="news-image"><img src="img/pexels-jonathanborba-19641818.jpg" alt="News"></div>
+                <div class="news-content">
+                    <div class="news-date">September 28, 2025</div>
+                    <h3 class="news-title">The Future of Skincare Technology</h3>
+                    <p class="news-excerpt">Discover how cutting-edge technology is revolutionizing the skincare
+                        industry.</p>
+                    <a href="#" class="read-more text-accent hover:underline">Read More →</a>
+                </div>
+            </div>
+            <div class="news-card">
+                <div class="news-image"><img src="img/pexels-valeriya-696285.jpg" alt="News"></div>
+                <div class="news-content">
+                    <div class="news-date">September 25, 2025</div>
+                    <h3 class="news-title">Seasonal Skincare Tips</h3>
+                    <p class="news-excerpt">Learn how to adjust your skincare routine as the seasons change.</p>
+                    <a href="#" class="read-more text-accent hover:underline">Read More →</a>
+                </div>
+            </div>
+            <div class="news-card">
+                <div class="news-image"><img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=600"
+                        alt="News"></div>
+                <div class="news-content">
+                    <div class="news-date">September 20, 2025</div>
+                    <h3 class="news-title">New Treatment Launch</h3>
+                    <p class="news-excerpt">Our latest signature treatment combines ancient rituals with modern science.
+                    </p>
+                    <a href="#" class="read-more text-accent hover:underline">Read More →</a>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <footer id="contact" class="bg-neutral-900 text-neutral-300">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3 class="text-white">Ocean Ease</h3>
+                <p>Your ultimate skincare sanctuary where luxury meets expertise.</p>
+                <div class="social-links">
+                    <a href="#" class="hover:text-accent"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-accent"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover:text-accent"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="hover:text-accent"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4 class="text-white">Quick Links</h4>
+                <ul>
+                    <li><a href="#about" class="hover:text-accent">About Us</a></li>
+                    <li><a href="#services" class="hover:text-accent">Services</a></li>
+                    <li><a href="#shop" class="hover:text-accent">Shop</a></li>
+                    <li><a href="#news" class="hover:text-accent">News</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4 class="text-white">Services</h4>
+                <ul>
+                    <li><a href="#" class="hover:text-accent">Facial Treatments</a></li>
+                    <li><a href="#" class="hover:text-accent">Body Treatments</a></li>
+                    <li><a href="#" class="hover:text-accent">Massage Therapy</a></li>
+                    <li><a href="#" class="hover:text-accent">Wellness Rituals</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4 class="text-white">Contact</h4>
+                <ul>
+                    <li><a href="tel:+1234567890" class="hover:text-accent">+1 (234) 567-890</a></li>
+                    <li><a href="mailto:info@OceanEase.com" class="hover:text-accent">info@OceanEase.com</a></li>
+                    <li><span>123 Luxury Avenue, NY</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Sanctuary. All rights reserved.</p>
+        </div>
+    </footer>
+    <script type="module" src="./scripts.js"></script>
+</body>
+
+</html>
