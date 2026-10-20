@@ -1,6 +1,6 @@
 # Ocean — Luxury Salon Experience
 
-*The Devil Wears Prada, but the appointment is for a haircut.*
+An editorial salon landing page built around imagery, typography, and scroll-driven motion.
 
 Ocean is a luxury salon website concept focused on an editorial visual presentation. The current page is built as a browser-first HTML/CSS/JavaScript experience and loads Tailwind CSS, Font Awesome, GSAP, ScrollTrigger, and Lenis from CDNs.
 
@@ -19,4 +19,4 @@ There is no `package.json` in the repository root at present, so no npm workflow
 
 Replace any demo content with approved salon information, check image rights, test keyboard/focus behavior and mobile layouts, and verify that every booking/contact action leads somewhere real.
 
-*Luxury is a design choice. Broken links are not.*
+Premium presentation only works when the navigation and booking links do, too.
